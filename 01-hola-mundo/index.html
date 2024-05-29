@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 01 Hola Mundo </title>
+
+    <!--  **********  Importación de jQuery  **********  -->
+    <script src="jquery-3.7.1.min.js"> </script>
+</head>
+
+<body>
+    
+    <h1> Hola Mundo! </h1>
+
+    <p> Aprendiendo jQuery </p>
+    <p> Bienvenidos al curso de JavaScript de Píldoras Informáticas. </p>
+    <img src="arbol.jpg" >
+
+    <script>
+
+        $(document).ready(function () {
+            
+            console.log("Documento Cargado!");
+
+            $("body").hide().fadeIn(10000);
+        });
+
+    </script>
+
+</body>
+</html>

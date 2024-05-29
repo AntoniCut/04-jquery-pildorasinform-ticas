@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 04 - Agregar Contenidos </title>
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+
+        .centrado {
+            margin: 0 auto;
+        }
+
+        .micontenedor {
+            background-color:aqua;
+            font-size: 24px;
+        }
+
+    </style>
+
+    <!--  **********  Importación de jQuery  **********  -->
+    <script src="jquery-3.7.1.min.js"> </script>
+</head>
+
+<body>
+    
+    <h1> Agregar contenido con jQuery! </h1>
+
+    <div id="contenedor" class="centrado"> 
+
+        <div id="errores" class="micontenedor">
+            <h2> Errores </h2>
+            <h3>  </h3>
+        </div>
+
+    </div>
+
+    <br> <hr> <br>
+    <form>
+        <label> Usuario </label>
+        <input type="text" id="usuario"> <br> <br>
+        <label> Nombre </label>
+        <input type="text"> <br> <br>
+        <label> Apellidos </label>
+        <input type="text"> <br> <br>
+        <input type="button" value="Enviar" onclick="validar()"> <br> <br>
+    </form>
+            
+            
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(document).ready(function () {
+           
+            console.log("Documento Cargado!");
+
+            //  Obtenemos el HTML de selectores, id, clases, etc, y lo enviamos a un alert.
+            alert($("#errores").html());
+            alert($("#errores h2").html());
+
+            //  html(), Reemplazamos contenido HTML.
+            $("#errores").html("<p> Cambio contenido HTML </p>");
+
+            //  append(), Agrear elementos al final del contenido que tengamos.
+            $("#errores").append("<p> Agregamos párrafo con append() al final </p>");
+
+            //  prepend(), Agrear elementos al principio del contenido que tengamos.
+            $("#errores").prepend("<p> Agregamos párrafo con prepend() al inicio </p>");
+
+            //  before(), Agrear elementos al principio del todo.
+            $("#errores").before("<p> Agregamos párrafo con before() al inicio del todo, fuera del contenedor </p>");
+
+            //  after(), Agrear elementos al final del todo.
+            $("#errores").after("<p> Agregamos párrafo con after() al final del todo, fuera del contenedor </p>");
+
+            //  text(), Agrear elementos. ¡ No funciona con etiquetas HTML !.
+            $("#errores h3").text("Agregamos párrafo con text()");
+
+        });
+
+        function validar() {
+
+            var n_usuario = document.getElementById("usuario").value;
+
+            if(n_usuario == "") $("#usuario").after(" Rellena este campo, por favor");
+        }
+
+
+                                                                                                            
+    </script>
+    
+</body>
+</html>

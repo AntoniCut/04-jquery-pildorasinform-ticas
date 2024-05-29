@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 02 - DOM JavaScript </title>
+
+    <style>
+        #anuncio {
+            background-color: #000;
+            color: #fff;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1> Hola Mundo! </h1>
+
+    <div id="carrete">
+        <img src="imgs/arbol.jpg" width="250" height="175">
+        <img src="imgs/foto2.jpg" width="250" height="175">
+        <img src="imgs/foto3.jpg" width="250" height="175">
+        <img src="imgs/foto4.jpg" width="250" height="175">
+    </div>
+    
+    <div id="anuncio">
+        ¡ COMPRA !
+    </div>
+
+    <!--  **********  Código JavaScript  **********  -->
+    <script> 
+    
+        //  seleccionamos las imagenes.
+        var imagenes = document.querySelectorAll("#carrete img");
+        
+        //  recorremos cada imagen y la ocultamos.
+        for(var i=0; i<imagenes.length; i++) {
+            imagenes[i].style.visibility = "hidden";
+        }
+
+        //  hacemos un cuadrado y cambiamos el texto.
+        var anuncio = document.getElementById("anuncio");
+            anuncio.style.width = "500px";
+            anuncio.style.height = "500px";
+            anuncio.innerHTML = "¡VENDE!";
+    
+    </script>
+    
+</body>
+</html>
