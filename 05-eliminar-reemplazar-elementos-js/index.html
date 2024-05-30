@@ -22,7 +22,11 @@
             cursor: pointer;
         }
 
-        #sustitucion {
+        #imagen1,
+        #imagen2,
+        #imagen3,
+        #imagen4,
+        #imagenes {
             float: left;
             background-color: green;
             margin: 15px;
@@ -59,7 +63,7 @@
     </div>
 
     <div id="carrete">
-        <img src="imgs/arbol.jpg" id="imagen1" class="imagen">
+        <img src="imgs/arbol.jpg" id="imagen1">
         <img src="imgs/foto2.jpg" id="imagen2">
         <img src="imgs/foto3.jpg" id="imagen3">
         <img src="imgs/foto4.jpg" id="imagen4">
@@ -72,29 +76,18 @@
 
             console.log("Documento Cargado!");
 
-            /*
             //  *****  1ª Forma con JavaScript - Pulsamos en 'cerrar' y en una 'imagen' *****
             var cerrar = document.getElementById("cerrar");
                 cerrar.addEventListener("click", cerrar_banner, false);
 
-            var imagenClic = document.getElementById("imagen1");
-                imagenClic = addEventListener("click", carrito, false);
+            //var imagenClic = document.getElementById("imagen1");
+              //  imagenClic = addEventListener("click", carrito, false);
 
-            */
+            var imagenes = document.querySelectorAll("#carrete img");       //  array de imagenes.
+            for(var i=0; i<imagenes.length; i++) {
+                imagenes[i].addEventListener("click", carrito, false);
+            }
             
-            //  *****  2ª Forma con jQuery - Pulsamos en 'cerrar' y en una 'imagen'  *****
-            $("#cerrar").on("click", function () {
-                //  Eliminamos el banner.
-                cerrar_banner();    
-            });
-
-            //  Pinchamos en imagen 1.
-            $("#imagen1").on("click", function () {
-                //  Agregamos texto al carrito.
-                carrito();
-            });
-                                                                                                                                                                        
-                       
         });
 
 
@@ -108,12 +101,15 @@
         }
 
         //  Funcion que elimina el banner.
-        function carrito() {
+        function carrito(e) {
 
-            //  Ocultamos y Eliminamos el banner.
-            $("#imagen1").replaceWith("<div id='sustitucion'> Agregado al carrito! </div>");
-       }
-
+            if (e.target == imagen1) $("#carrete #imagen1").replaceWith("<div id='imagen1'> Agregado al carrito! </div>");  //  Ocultamos y Eliminamos el banner.
+            if (e.target == imagen2) $("#carrete #imagen2").replaceWith("<div id='imagen2'> Agregado al carrito! </div>");  //  Ocultamos y Eliminamos el banner.
+            if (e.target == imagen3) $("#carrete #imagen3").replaceWith("<div id='imagen3'> Agregado al carrito! </div>");  //  Ocultamos y Eliminamos el banner.
+            if (e.target == imagen4) $("#carrete #imagen4").replaceWith("<div id='imagen4'> Agregado al carrito! </div>");  //  Ocultamos y Eliminamos el banner.
+        }
+        
+        
     </script>
 
 </body>

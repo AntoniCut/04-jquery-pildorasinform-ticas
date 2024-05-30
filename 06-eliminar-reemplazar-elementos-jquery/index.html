@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 06 - Eliminar, Reemplazar Elementos - jQuery </title>
+
+    <style>
+        #banner {
+            background-color: #f00;
+            width: 450px;
+            height: 300px;
+            position: absolute;
+            left: 400px;
+            top: 70px;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        #cerrar {
+            cursor: pointer;
+        }
+
+        #imagenes {
+            float: left;
+            background-color: green;
+            margin: 15px;
+            width: 350px;
+            height: 200px;
+            line-height: 200px;
+            font-size: 36px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        img {
+            float: left;
+            margin: 15px;
+            width: 350px;
+            height: 200px;
+            cursor: pointer;
+        }
+    </style>
+
+    <!--  **********  Importación de jQuery  **********  -->
+    <script src="jquery-3.7.1.min.js"> </script>
+</head>
+
+<body>
+
+    <center>
+        <h1> Eliminar y Reemplazar elementos! </h1>
+    </center>
+
+    <div id="banner">
+        Banner de prueba
+        <p id="cerrar"> Cerrar </p>
+    </div>
+
+    <div id="carrete">
+        <img src="imgs/arbol.jpg">
+        <img src="imgs/foto2.jpg">
+        <img src="imgs/foto3.jpg">
+        <img src="imgs/foto4.jpg">
+    </div>
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(document).ready(function () {
+
+            console.log("Documento Cargado!");
+
+            //  *****  2ª Forma con jQuery - Pulsamos en 'cerrar' y en una 'imagen'  *****
+            $("#cerrar").on("click", function () {
+                //  Eliminamos el banner.
+                cerrar_banner();
+            });
+
+            //  Pinchamos en imagenes.
+            $("#carrete img").on("click", function () {
+                //  Agregamos texto al carrito.
+                
+                $(this).replaceWith("<div id='imagenes'> Agregado al carrito! </div>");  //  Ocultamos y Eliminamos el banner.
+                               
+            });
+
+        });
+
+        //  Funcion que elimina el banner.
+        function cerrar_banner() {
+
+            //  Ocultamos y Eliminamos el banner.
+            $("#banner").fadeOut(2000, function () {
+                $(this).remove();
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>
