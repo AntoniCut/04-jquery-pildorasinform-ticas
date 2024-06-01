@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 11 - Leyendo y Cambiando Atributos CSS - jQuery </title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        div {
+            width: 20%;
+            margin: 0 100px;
+            float: left;
+            border: 2px solid #f00;
+            padding: 10px;
+            text-align: justify;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+
+    <!--  **********  Importación de jQuery  **********  -->
+    <script src="jquery-3.7.1.min.js"> </script>
+</head>
+
+
+<body>
+
+    <h1> Notícias </h1>
+
+    <div id="noticia1">
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, qui numquam. Quibusdam nulla fugiat facere
+            culpa inventore tempore, odit dolor omnis eos, accusamus optio unde modi assumenda veritatis doloribus quas.
+            Necessitatibus fuga voluptate, asperiores laudantium tempora ad veritatis odio minus assumenda vitae
+            accusantium laboriosam quidem? Ab fuga, perferendis qui provident voluptas blanditiis recusandae
+            consequuntur deleniti optio. Reiciendis iusto aspernatur dolorem.
+            Quisquam aliquam laboriosam quaerat inventore! Consectetur assumenda sapiente exercitationem, ex omnis at
+            sit nesciunt laboriosam a repellat quasi maiores voluptate tempore fuga illo expedita reiciendis tenetur aut
+            consequuntur ipsam optio.
+            Obcaecati voluptate fugiat ex, illo aliquid voluptatibus recusandae inventore qui facilis ad odio totam
+            perferendis architecto repudiandae tempora minima distinctio dignissimos optio cum doloribus possimus
+            deserunt? Nihil facere pariatur fuga?
+            Illum, illo sunt. Aspernatur id deleniti sequi tenetur. Hic incidunt totam nisi deserunt distinctio mollitia
+            inventore id atque voluptatibus veritatis, alias perspiciatis provident illum, necessitatibus quasi eveniet
+            laboriosam temporibus amet?
+        </p>
+        <table>
+            <tr>
+                <td style="text-align: center;"> <input type="button" value="Modo Lectura" id="m_lectura1"> </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="noticia2">
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, qui numquam. Quibusdam nulla fugiat facere
+            culpa inventore tempore, odit dolor omnis eos, accusamus optio unde modi assumenda veritatis doloribus quas.
+            Necessitatibus fuga voluptate, asperiores laudantium tempora ad veritatis odio minus assumenda vitae
+            accusantium laboriosam quidem? Ab fuga, perferendis qui provident voluptas blanditiis recusandae
+            consequuntur deleniti optio. Reiciendis iusto aspernatur dolorem.
+            Quisquam aliquam laboriosam quaerat inventore! Consectetur assumenda sapiente exercitationem, ex omnis at
+            sit nesciunt laboriosam a repellat quasi maiores voluptate tempore fuga illo expedita reiciendis tenetur aut
+            consequuntur ipsam optio.
+            Obcaecati voluptate fugiat ex, illo aliquid voluptatibus recusandae inventore qui facilis ad odio totam
+            perferendis architecto repudiandae tempora minima distinctio dignissimos optio cum doloribus possimus
+            deserunt? Nihil facere pariatur fuga?
+            Illum, illo sunt. Aspernatur id deleniti sequi tenetur. Hic incidunt totam nisi deserunt distinctio mollitia
+            inventore id atque voluptatibus veritatis, alias perspiciatis provident illum, necessitatibus quasi eveniet
+            laboriosam temporibus amet?
+        </p>
+        <table>
+            <tr>
+                <td style="text-align: center;"> <input type="button" value="Modo Lectura" id="m_lectura2"> </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="noticia3">
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, qui numquam. Quibusdam nulla fugiat facere
+            culpa inventore tempore, odit dolor omnis eos, accusamus optio unde modi assumenda veritatis doloribus quas.
+            Necessitatibus fuga voluptate, asperiores laudantium tempora ad veritatis odio minus assumenda vitae
+            accusantium laboriosam quidem? Ab fuga, perferendis qui provident voluptas blanditiis recusandae
+            consequuntur deleniti optio. Reiciendis iusto aspernatur dolorem.
+            Quisquam aliquam laboriosam quaerat inventore! Consectetur assumenda sapiente exercitationem, ex omnis at
+            sit nesciunt laboriosam a repellat quasi maiores voluptate tempore fuga illo expedita reiciendis tenetur aut
+            consequuntur ipsam optio.
+            Obcaecati voluptate fugiat ex, illo aliquid voluptatibus recusandae inventore qui facilis ad odio totam
+            perferendis architecto repudiandae tempora minima distinctio dignissimos optio cum doloribus possimus
+            deserunt? Nihil facere pariatur fuga?
+            Illum, illo sunt. Aspernatur id deleniti sequi tenetur. Hic incidunt totam nisi deserunt distinctio mollitia
+            inventore id atque voluptatibus veritatis, alias perspiciatis provident illum, necessitatibus quasi eveniet
+            laboriosam temporibus amet?
+        </p>
+        <table>
+            <tr>
+                <td style="text-align: center;"> <input type="button" value="Modo Lectura" id="m_lectura3"> </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(document).ready(function () {
+
+            console.log("Documento Cargado!");
+
+            var botones = document.querySelectorAll("input");
+            for(var i=0; i<botones.length; i++) {
+                botones[i].addEventListener("click",modo_lectura, false);
+            }
+
+        });
+
+
+        function modo_lectura(e) {
+
+            var zonaActuacion;
+
+            if (e.target == m_lectura1)        zonaActuacion = "#noticia1";
+            else if (e.target == m_lectura2)   zonaActuacion = "#noticia2";
+            else if (e.target == m_lectura3) zonaActuacion = "#noticia3";
+            
+
+            $(zonaActuacion).css({
+                backgroundColor: "#000",
+                color:           "#fff",
+                fontSize:        "20px",
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

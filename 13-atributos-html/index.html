@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 13 - Leyendo y Cambiando Atributos HTML - jQuery </title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+        }
+
+        img {
+            margin: 20px;
+        }
+    </style>
+
+    <!--  **********  Importación de jQuery  **********  -->
+    <script src="jquery-3.7.1.min.js"> </script>
+</head>
+
+
+<body>
+
+    <h1> Galeria de Imagenes </h1>
+
+    <table width="80%" border="0">
+        <tr>
+            <td> <img src="imgs/foto1.jpg" id="img1" width="400" height="300"> </td>
+            <td> <img src="imgs/foto2.jpg" id="img2" width="400" height="300"> </td>
+            <td> <img src="imgs/foto3.jpg" id="img3" width="400" height="300"> </td>
+            <td> <img src="imgs/foto4.jpg" id="img4" width="400" height="300"> </td>
+        </tr>
+    </table>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(document).ready(function () {
+
+            console.log("Documento Cargado!");
+
+            var elementos = document.querySelectorAll("img");
+            for (var i = 0; i < elementos.length; i++) {
+                elementos[i].addEventListener("mouseover", cambiar, false);
+                elementos[i].addEventListener("mouseout", restaurar, false);
+            }
+
+        });
+
+        function cambiar(e) {
+
+            if (e.target == img1) $("#img1").attr("src", "imgs2/foto1.jpg").attr("width", "400px");
+            else if (e.target == img2) $("#img2").attr("src", "imgs2/foto2.jpg").attr("width", "400px");
+            else if (e.target == img3) $("#img3").attr("src", "imgs2/foto3.jpg").attr("width", "400px");
+            else if (e.target == img4) $("#img4").attr("src", "imgs2/foto4.jpg").attr("width", "400px");
+
+        }
+
+        function restaurar(e) {
+
+            if (e.target == img1) $("#img1").attr("src", "imgs/foto1.jpg").attr("width", "400px");
+            else if (e.target == img2) $("#img2").attr("src", "imgs/foto2.jpg").attr("width", "400px");
+            else if (e.target == img3) $("#img3").attr("src", "imgs/foto3.jpg").attr("width", "400px");
+            else if (e.target == img4) $("#img4").attr("src", "imgs/foto4.jpg").attr("width", "400px");
+
+        }
+                                                
+    </script>
+
+</body>
+
+</html>

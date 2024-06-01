@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 09 - Leyendo y Cambiando Atributos CSS - jQuery </title>
+
+    <style>
+        #primer_parrafo {
+            background-color: #f00; 
+        }
+
+    </style>
+
+    <!--  **********  Importación de jQuery  **********  -->
+    <script src="jquery-3.7.1.min.js"> </script>
+</head>
+
+
+<body>
+
+   <p id="primer_parrafo"> Primer Párrafo </p>                        
+   <p class="destacado"> Párrafo Destacado </p>                        
+   <p class="tercero"> Tercer Párrafo </p>                        
+   
+                  
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(document).ready(function () {
+
+            console.log("Documento Cargado!");
+
+            var colorFondo = $("#primer_parrafo").css("background-color");
+            alert(colorFondo);
+
+            var color = $(".destacado").css("color", "green");
+
+            var tercero = $(".tercero").css({
+                border:   "1px solid blue",
+                fontSize: "24px"
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

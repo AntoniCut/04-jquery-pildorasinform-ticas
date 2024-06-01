@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 08 - Cambiando Atributos CSS - jQuery </title>
+
+    <style>
+        .linkdestacacursos {
+            /* background-color: #f00; */
+            color: #f00;
+            font-weight: bold;
+            margin-left: 25px;
+        }
+
+        .linkdestainformacion {
+            /* background-color: #f00; */
+            color: rgb(0, 255, 21);
+            font-weight: bold;
+            margin-left: 25px;
+        }
+
+        a {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        table {
+            position: absolute;
+            left: 100px;
+            top: 50px;
+
+            text-align: center;
+            border: none;
+        }
+
+        td {
+            border: none;
+        }
+
+        #contieneEnlaces {
+            position: absolute;
+            left: 31px;
+            top: 65px;
+            width: 400px;
+            height: 649px;
+            z-index: 1;
+            padding-top: 10px;
+            /* border: 1px solid black; */
+        }
+    </style>
+
+    <!--  **********  Importación de jQuery  **********  -->
+    <script src="jquery-3.7.1.min.js"> </script>
+</head>
+
+
+<body>
+
+    <div id="contieneEnlaces">
+        <a href="http://www.pildorasinformaticas.com" target="_blank" class="cursos"> Píldoras Informáticas </a> <br>
+        <a href="http://www.google.com" target="_blank"> Google </a> <br>
+        <a href="https://www.youtube.com/user/pildorasinformaticas" target="_blank" class="cursos"> Píldoras
+            Informáticas Youtube </a> <br>
+        <a href="#"> Remover y Reemplazar </a> <br>
+        <a href="https://www.news.google.es" class="ejemplos" target="_blank"> Noticias Google </a> <br>
+        <a href="#" target="_blank" class="ejemplos"> Calculadora </a> <br>
+    </div>
+
+    <br> <br> <br>
+
+    <table width="100%" border="1">
+        <tr>
+            <td> Cursos Destacados &nbsp <input type="checkbox"     name="misbotones" value="cursos" id="cursos"> </td>
+            <td> Informacion Adicional &nbsp <input type="checkbox" name="misbotones" value="informacion" id="informacion"> </td>
+        </tr>
+    </table>
+
+
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(document).ready(function () {
+
+            console.log("Documento Cargado!");
+
+
+            //$("a[href^='http://']").addClass("linkdestacacursos");
+
+
+            document.getElementById("cursos").addEventListener("click", resaltacursos, false);
+            document.getElementById("informacion").addEventListener("click", resaltarejemplos, false);
+
+        });
+
+
+        function resaltacursos() {
+            $(".cursos").toggleClass("linkdestacacursos");
+        }
+
+        function resaltarejemplos() {
+            $(".ejemplos").toggleClass("linkdestainformacion");
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 12 - Leyendo y Cambiando Atributos HTML - jQuery </title>
+
+    <style> </style>
+
+    <!--  **********  Importación de jQuery  **********  -->
+    <script src="jquery-3.7.1.min.js"> </script>
+</head>
+
+
+<body>
+
+    <img src="imgs/arbol.jpg" id="img1" width="400">
+
+    
+    <!--  **********  Código jQuery  **********  -->
+    <script>
+
+        $(document).ready(function () {
+
+            console.log("Documento Cargado!");
+
+            document.getElementById("img1").addEventListener("mouseover", cambiar, false);
+            document.getElementById("img1").addEventListener("mouseout", restaurar, false);
+
+        });
+
+        function cambiar() {
+            $("img").attr("src", "imgs/foto1.jpg")
+                .attr("width", "400px");
+        }
+
+        function restaurar() {
+            $("img").attr("src", "imgs/arbol.jpg")
+                .attr("width", "400px");
+        }
+
+    </script>
+
+</body>
+
+</html>
