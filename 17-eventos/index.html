@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> 17 - Eventos - jQuery </title>
+	<style>
+		h1 {
+			text-align: center;
+		}
+
+		body {
+			background-color: #334873;
+			color: #FFF;
+		}
+
+		#principal {
+			width: 60%;
+			margin: auto;
+		}
+
+		a {
+			color: #FFF;
+			font: bold 20px Verdana, Geneva, sans-serif;
+		}
+	</style>
+
+	<!--  **********  Importación de jQuery  **********  -->
+	<script src="jquery-3.7.1.min.js"> </script>
+
+</head>
+
+<body>
+
+	<div id="principal">
+
+		<h1>Introducción a eventos</h1>
+
+		<p><a href="#">Un link</a></p>
+
+		<form action="#" method="get">
+			<fieldset>
+				<legend>Formulario</legend>
+				<p>
+					<input name="button" type="button" id="el_boton" value="Un boton">
+				</p>
+				<p><input name="textfield" type="text" id="el_campo"></p>
+			</fieldset>
+		</form>
+
+	</div>
+
+	<!--  **********  Código jQuery  **********  -->
+	<script>
+
+		$(document).ready(function () {
+
+			console.log("Documento Cargado!");
+
+			$("html").dblclick(function () {
+				alert("Ayyyyyyyy");
+			});
+
+			$("a").mouseover(function () {
+				var mensaje = "<p> Has pasado el raton por el link </p>";
+				$("#principal").append(mensaje);
+			});
+
+			$("#el_boton").click(function () {
+				$(this).val("boton pulsado");
+			});
+
+			$("#el_campo").focus(function () {
+				$(this).val("Ahora vas a escribir aqui");
+			});
+		});
+
+	</script>
+
+</body>
+
+</html>
