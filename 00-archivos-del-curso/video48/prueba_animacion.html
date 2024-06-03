@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Documento sin título</title>
+
+	<style>
+		img {
+			opacity: 0.5;
+		}
+	</style>
+
+	<!--  **********  Importacion del jQuery  **********    -->
+	<script src="../jquery-lib/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+	<img src="imgs/1.jpg" width="300" height="200" id="imagen">
+
+
+	<!--  **********  Código jQuery  **********  -->
+	<script>
+
+		$(document).ready(function () {
+
+			console.log("Documento Cargado!");
+
+			$("#imagen").click(function () {
+
+				$(this).animate({
+					marginLeft: "+=100px"
+				}, 1000);
+
+			});
+
+			$("#imagen").mouseover(function () {
+
+				$(this).animate({
+					opacity: 1
+				}, 250);
+			})
+
+			$("#imagen").mouseout(function () {
+				$(this).animate({
+					opacity: 0.5
+				}, 250);
+			})
+
+		});
+
+	</script>
+
+</body>
+
+</html>
