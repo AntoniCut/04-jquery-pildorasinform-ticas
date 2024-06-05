@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Documento sin título</title>
+	<title> 28 - Preloader - jQuery </title>
 	<style>
 		table {
 			text-align: center;
@@ -22,7 +22,7 @@
 	</style>
 
 	<!--  **********  Importacion del jQuery  **********    -->
-	<script src="../jquery-lib/jquery-3.7.1.min.js"> </script>
+	<script src="jquery-3.7.1.min.js"> </script>
 
 </head>
 
@@ -74,48 +74,6 @@
                 });
             });
 
-
-
-			/*
-			var foto_hover = [
-				"imgs/1.jpg",
-				"imgs/2.jpg",
-				"imgs/3.jpg",
-				"imgs/4.jpg",
-			];
-
-			var imagenes = [];
-			for (var i = 0; i < foto_hover.length; i++) {
-
-				//  preloader.
-				imagenes[i] = new Image();
-				imagenes[i] = foto_hover[i];
-			}
-
-			$("img").each(function () {
-				$(this).hover(cambiar, restaurar);
-			});
-
-			function cambiar(e) {
-
-				console.log("has entrado");
-
-				if (e.target == img1)      $("#img1").attr("src", imagenes[0].src);
-				else if (e.target == img2) $("#img2").attr("src", imagenes[1].src);
-				else if (e.target == img3) $("#img3").attr("src", imagenes[2].src);
-				else if (e.target == img3) $("#img4").attr("src", imagenes[3].src);
-			}
-
-			function restaurar(e) {
-
-				console.log("has salido");
-
-				if (e.target == img1) $("#img1").attr("src", "imgs/imgs2/1.jpg");
-				else if (e.target == img2) $("#img2").attr("src", "imgs/imgs2/2.jpg");
-				else if (e.target == img3) $("#img3").attr("src", "imgs/imgs2/3.jpg");
-				else if (e.target == img3) $("#img4").attr("src", "imgs/imgs2/4.jpg");
-			}
-			*/
 		});
 
 	</script>
